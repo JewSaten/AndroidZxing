@@ -46,7 +46,7 @@ class ScannerActivity : BaseActivity(), ToolbarManager, OnScannerCompletionListe
     }
 
     override fun OnScannerCompletion(rawResult: Result?, parsedResult: ParsedResult?, barcode: Bitmap?) {
-        App.instance.toast(rawResult!!.text)
+        rawResult?.let { App.instance.toast(it.text) }
         finish()
     }
 
